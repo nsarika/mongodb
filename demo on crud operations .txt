@@ -1,0 +1,58 @@
+ db
+test
+> use MyNewDatabase
+switched to db MyNewDatabase
+> show collections
+customers
+students
+users
+> db.teachers.insertOne({name : "shanker",subject : "mathematics",experiance : 12,school : "st.peters"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5da33f0734219ddf0a3ac268")
+}
+> db.teachers.insertOne({name : "guru",subject : "science",experiance : 11,school : "st.peters"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5da33f3434219ddf0a3ac269")
+}
+> db.teachers.insertOne({name : "pradeep",subject : "english",experiance : 9,school : "st.peters"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5da33f5834219ddf0a3ac26a")
+}
+> db.teachers.insertOne({name : "kanishka",subject : "telugu",experiance : 3,school : "st.peters"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5da33f7a34219ddf0a3ac26b")
+}
+> db.teachers.find({})
+{ "_id" : ObjectId("5da33f0734219ddf0a3ac268"), "name" : "shanker", "subject" : "mathematics", "experiance" : 12, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f3434219ddf0a3ac269"), "name" : "guru", "subject" : "science", "experiance" : 11, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f5834219ddf0a3ac26a"), "name" : "pradeep", "subject" : "english", "experiance" : 9, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f7a34219ddf0a3ac26b"), "name" : "kanishka", "subject" : "telugu", "experiance" : 3, "school" : "st.peters" }
+> db.teachers.update({_id:
+... ObjectId("5da33f5834219ddf0a3ac26a")},
+... {"name" : "pradeep",
+... "subject" : "hindi",
+... "experience" : 5,
+... "school" : "st.peters"}
+... )
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.teachers.find({})
+{ "_id" : ObjectId("5da33f0734219ddf0a3ac268"), "name" : "shanker", "subject" : "mathematics", "experiance" : 12, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f3434219ddf0a3ac269"), "name" : "guru", "subject" : "science", "experiance" : 11, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f5834219ddf0a3ac26a"), "name" : "pradeep", "subject" : "hindi", "experience" : 5, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f7a34219ddf0a3ac26b"), "name" : "kanishka", "subject" : "telugu", "experiance" : 3, "school" : "st.peters" }
+> db.teachers.deleteOne( { "name" : "kanishka"} )
+{ "acknowledged" : true, "deletedCount" : 1 }
+> db.teachers.find({})
+{ "_id" : ObjectId("5da33f0734219ddf0a3ac268"), "name" : "shanker", "subject" : "mathematics", "experiance" : 12, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f3434219ddf0a3ac269"), "name" : "guru", "subject" : "science", "experiance" : 11, "school" : "st.peters" }
+{ "_id" : ObjectId("5da33f5834219ddf0a3ac26a"), "name" : "pradeep", "subject" : "hindi", "experience" : 5, "school" : "st.peters" }
+> ^C
+bye
+
+C:\WINDOWS\system32>
+
+
