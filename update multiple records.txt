@@ -19,6 +19,6 @@ users
 WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
 > db.teachers.find({})
 { "_id" : ObjectId("5da33f0734219ddf0a3ac268"), "name" : "shanker", "subject" : "mathematics", "experiance" : 20, "school" : "thomson" }
-{ "_id" : ObjectId("5da33f3434219ddf0a3ac269"), "name" : "guru", "subject" : "science", "experiance" : 20, "school" : "martins" }
+{ "_id" : ObjectId("5da33f3434219ddf0a3ac269"), "name" : "guru", "subject" : "science", "experiance" : 11, "school" : "martins" }
 { "_id" : ObjectId("5da33f5834219ddf0a3ac26a"), "name" : "pradeep", "subject" : "hindi", "experience" : 5, "school" : "martins" }
 >
